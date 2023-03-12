@@ -29,7 +29,17 @@ function App() {
     <div id="main">
       <button>Reverse</button>
       <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Input</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
         <tbody>
+          {todos.map(todo => (
+            <ToDo key={todo.id} todoId={todo.id} input={todo.input} createdAt={todo.createdAt} />
+          ))}
         </tbody>
       </table>
     </div>
